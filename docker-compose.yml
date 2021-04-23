@@ -2,7 +2,8 @@ version: "3.7"
 services:
   app:
     build: .
-    container_name: ruby_container
+    image: neerajcrespo/ms_test
+    container_name: ms_test_container
     ports:
       - "3000:3000"
     volumes:
