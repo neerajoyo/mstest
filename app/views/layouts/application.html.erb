@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mstest</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <%#= render "layouts/sidebar" %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-offset-2 col-xs-10">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

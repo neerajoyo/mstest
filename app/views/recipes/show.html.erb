@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-xs-12">
+    <h1><%= @recipe[:title] %></h1>
+
+  </div>
+</div>
+
+<div class="Recipe">
+  <div class="row">
+    <div class="col-xs-6">
+      <%= image_tag @recipe[:image_url], class: 'Recipe-image img-responsive' %>
+
+      <div class="Icon-container">
+        <% if @recipe[:tags] && @recipe[:tags].include?("gluten") %>
+          <i class="Icon Icon--default Icon-glutenFree"></i>
+        <% end %>
+        <% if @recipe[:tags] && @recipe[:tags].include?("vegan") %>
+          <i class="Icon Icon--default Icon-vegan"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row Recipe-details">
+    <div class="col-xs-5">
+      <h3>Ingredients</h3>
+    </div>
+
+    <div class="col-xs-6">
+      <h3>Instructions</h3>
+    </div>
+  </div>
+</div>
