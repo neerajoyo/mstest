@@ -10,6 +10,9 @@ module Contentful
             dynamic_entries: :auto,
             resource_mapping: {
               'Asset' => ContentfulImage
+            },
+            entry_mapping: {
+                'recipe' => ContentfulRecipe
             }
       )
     end
