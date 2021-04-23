@@ -1,5 +1,7 @@
+require 'singleton'
 module Contentful
   class Recipe < Base
+    include Singleton
 
     def initialize()
       super()
