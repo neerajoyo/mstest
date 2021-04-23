@@ -30,9 +30,9 @@ class RecipesController < ApplicationController
       new_recipe[:calories] = recipe_item.fields[:calories] if recipe_item.fields[:calories]
       new_recipe[:description] = recipe_item.fields[:description] if recipe_item.fields[:description]
       if recipe_item.fields[:tags]
-        new_recipe[:tag] = Array.new
+        new_recipe[:tags] = Array.new
         recipe_item.fields[:tags].each do |tag|
-          new_recipe[:tag] << tag.fields[:name].to_s
+          new_recipe[:tags] << tag.fields[:name].to_s
         end
       end
       if recipe_item.fields[:chef]
@@ -51,9 +51,9 @@ class RecipesController < ApplicationController
     new_recipe[:calories] = recipe_item.fields[:calories] if recipe_item.fields[:calories]
     new_recipe[:description] = recipe_item.fields[:description] if recipe_item.fields[:description]
     if recipe_item.fields[:tags]
-      new_recipe[:tag] = Array.new
+      new_recipe[:tags] = Array.new
       recipe_item.fields[:tags].each do |tag|
-        new_recipe[:tag] << tag.fields[:name].to_s
+        new_recipe[:tags] << tag.fields[:name].to_s
       end
     end
     if recipe_item.fields[:chef]

@@ -1,33 +1,77 @@
-<div class="row">
-  <div class="col-xs-12">
-    <h1><%= @recipe[:title] %></h1>
+<!DOCTYPE html>
+<html lang="en">
 
-  </div>
-</div>
+<head>
 
-<div class="Recipe">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/shop-item.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+<!-- Page Content -->
+<div class="container">
+
   <div class="row">
-    <div class="col-xs-6">
-      <%= image_tag @recipe[:image_url], class: 'Recipe-image img-responsive' %>
 
-      <div class="Icon-container">
-        <% if @recipe[:tags] && @recipe[:tags].include?("gluten") %>
-          <i class="Icon Icon--default Icon-glutenFree"></i>
-        <% end %>
-        <% if @recipe[:tags] && @recipe[:tags].include?("vegan") %>
-          <i class="Icon Icon--default Icon-vegan"></i>
-        <% end %>
+
+    <!-- /.col-lg-3 -->
+
+    <div class="col-lg-12">
+
+      <div class="card mt-4">
+          <%= image_tag @recipe[:image_url], class: 'img-detail' %>
+        <div class="card-body">
+          <h3 class="card-title">
+            <%= @recipe[:title] %>
+          </h3>
+          <h4><%= @recipe[:calories] %> Calories</h4>
+          <p class="card-text">
+            <%= @recipe[:description] %>
+          </p>
+          <% if @recipe[:chef] %>
+            <span class="text-warning">Chef: </span>
+            <%= @recipe[:chef] %>
+            <% end %>
+        </div>
+        <div class="card-header">
+          <% if @recipe[:tags] %>
+            <span class="text-warning">Tags: </span>
+            <% @recipe[:tags].each do |tag| %>
+              <span> <%= tag %> </span>
+            <% end %>
+          <% end %>
+        </div>
       </div>
+      <!-- /.card -->
+
+
+      <!-- /.card -->
+
     </div>
+    <!-- /.col-lg-9 -->
+
   </div>
 
-  <div class="row Recipe-details">
-    <div class="col-xs-5">
-      <h3>Ingredients</h3>
-    </div>
-
-    <div class="col-xs-6">
-      <h3>Instructions</h3>
-    </div>
-  </div>
 </div>
+<!-- /.container -->
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
